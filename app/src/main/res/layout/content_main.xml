@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="379dp"
+        android:layout_height="213dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.0">
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="@string/glide_image_loading_library_by_bumptech" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="@string/loadapp_current_repository_by_udacity" />
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="center|start"
+            android:text="@string/retrofit_type_safe_http_client_for_android_and_java_by_square_inc" />
+    </RadioGroup>
+
+    <com.example.android.project3.LoadingButton
+        android:id="@+id/loadingButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:btnColor1="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <com.example.android.project3.AnimationButton
+        android:id="@+id/animationButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:btnColor1="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <com.example.android.project3.LoadingCircle
+        android:id="@+id/loadingCircle"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:elevation="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button_text"
+        app:layout_constraintEnd_toEndOf="@+id/loadingButton"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toEndOf="@+id/button_text"
+        app:layout_constraintTop_toTopOf="@+id/button_text"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/button_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="3dp"
+        android:text="Download"
+        android:textColor="#EEEEEE"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/loadingButton"
+        app:layout_constraintEnd_toEndOf="@+id/loadingButton"
+        app:layout_constraintStart_toStartOf="@+id/loadingButton"
+        app:layout_constraintTop_toTopOf="@+id/loadingButton" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="411dp"
+        android:layout_height="174dp"
+        android:background="#004349"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="176dp"
+            android:layout_height="113dp"
+            android:layout_marginStart="117dp"
+            android:layout_marginTop="31dp"
+            android:layout_marginEnd="118dp"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_cloud_download_24" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
