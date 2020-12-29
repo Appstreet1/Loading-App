@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="LoadingButton">
-        <attr name="btnColor1" format="color" />
-        <attr name="btnWidth" format="dimension"/>
-        <attr name="btnText" format="string"/>
+        <attr name="btn_loading_color" format="color" />
+        <attr name="btn_loading_width" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="AnimationButton">
+        <attr name="btn_animation_color" format="color" />
+        <attr name="btn_animation_width" format="dimension"/>
     </declare-styleable>
 </resources>
