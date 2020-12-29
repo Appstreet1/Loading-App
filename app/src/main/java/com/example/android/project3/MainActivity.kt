@@ -17,14 +17,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        initViewModel()
-
+//        initViewModel()
+//
         animationButton.setOnClickListener {
             animationButton.buttonState = ButtonState.Clicked
             loadingCircle.buttonState = ButtonState.Clicked
         }
-
-        observeButtonState()
+//
+//        observeButtonState()
     }
 
     private fun initViewModel() {

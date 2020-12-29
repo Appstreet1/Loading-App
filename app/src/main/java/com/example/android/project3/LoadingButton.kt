@@ -12,6 +12,12 @@ class LoadingButton @JvmOverloads constructor(
 
     private var buttonColor = 0
 
+    private val paintText = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        textAlign = Paint.Align.CENTER
+        color = Color.BLACK
+        textSize = 80F
+
+    }
 
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.FILL
@@ -29,4 +35,7 @@ class LoadingButton @JvmOverloads constructor(
         paint.color = buttonColor
         canvas.drawRect(0F, height.toFloat(), width.toFloat(), 0F, paint)
     }
+
+
+
 }

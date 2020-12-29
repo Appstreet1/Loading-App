@@ -57,6 +57,7 @@ class LoadingCircle @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
+        paint.color = resources.getColor(R.color.colorAccent)
         canvas.drawArc(rectF, 270F, currentSweepAngle.toFloat(), true, paint);
 
         if (currentSweepAngle == 360) {
