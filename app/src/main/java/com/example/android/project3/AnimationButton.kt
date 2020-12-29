@@ -27,7 +27,6 @@ class AnimationButton @JvmOverloads constructor(
     private var buttonColor = 0
     private var buttonText = ""
 
-
     var buttonState: ButtonState by Delegates.observable<ButtonState>(ButtonState.Completed) { property, old, new ->
         when (new) {
             ButtonState.Completed -> Log.i("TEST", "completed")

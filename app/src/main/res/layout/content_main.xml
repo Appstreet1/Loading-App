@@ -24,29 +24,33 @@
         app:layout_constraintVertical_bias="0.0">
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/rb_glide"
             android:layout_width="match_parent"
+
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
+            android:onClick="onRadioButtonClicked"
             android:text="@string/glide_image_loading_library_by_bumptech" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/rb_load_app"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
+            android:onClick="onRadioButtonClicked"
             android:text="@string/loadapp_current_repository_by_udacity" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/rb_retrofit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="start"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:gravity="center|start"
+            android:onClick="onRadioButtonClicked"
             android:text="@string/retrofit_type_safe_http_client_for_android_and_java_by_square_inc" />
     </RadioGroup>
 
