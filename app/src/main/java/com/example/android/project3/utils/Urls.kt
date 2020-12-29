@@ -1,4 +1,4 @@
-package com.example.android.project3
+package com.example.android.project3.utils
 
 object Urls {
 

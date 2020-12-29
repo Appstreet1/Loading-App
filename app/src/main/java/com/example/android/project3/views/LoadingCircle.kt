@@ -1,4 +1,4 @@
-package com.example.android.project3
+package com.example.android.project3.views
 import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.Canvas
@@ -8,8 +8,9 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.View
 import android.view.animation.AccelerateInterpolator
-import android.view.animation.LinearInterpolator
 import androidx.core.content.ContextCompat
+import com.example.android.project3.utils.ButtonState
+import com.example.android.project3.R
 import kotlin.properties.Delegates
 
 class LoadingCircle @JvmOverloads constructor(

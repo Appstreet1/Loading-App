@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
+    tools:context=".ui.MainActivity"
     tools:showIn="@layout/activity_main">
 
     <RadioGroup
@@ -54,7 +54,7 @@
             android:text="@string/retrofit_type_safe_http_client_for_android_and_java_by_square_inc" />
     </RadioGroup>
 
-    <com.example.android.project3.LoadingButton
+    <com.example.android.project3.views.LoadingButton
         android:id="@+id/loadingButton"
         android:layout_width="match_parent"
         android:layout_height="@dimen/button_height"
@@ -67,7 +67,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
-    <com.example.android.project3.AnimationButton
+    <com.example.android.project3.views.AnimationButton
         android:id="@+id/animationButton"
         android:layout_width="0dp"
         android:layout_height="@dimen/button_height"
@@ -79,7 +79,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
-    <com.example.android.project3.LoadingCircle
+    <com.example.android.project3.views.LoadingCircle
         android:id="@+id/loadingCircle"
         android:layout_width="27dp"
         android:layout_height="24dp"

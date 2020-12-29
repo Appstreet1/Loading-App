@@ -1,4 +1,4 @@
-package com.example.android.project3
+package com.example.android.project3.views
 
 import android.animation.ValueAnimator
 import android.content.Context
@@ -10,9 +10,8 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
-import android.widget.Button
-import androidx.constraintlayout.widget.ConstraintLayout
-import kotlinx.android.synthetic.main.content_main.view.*
+import com.example.android.project3.utils.ButtonState
+import com.example.android.project3.R
 import kotlin.properties.Delegates
 
 class AnimationButton @JvmOverloads constructor(

@@ -1,19 +1,27 @@
-package com.example.android.project3
+package com.example.android.project3.ui
 
 import android.app.DownloadManager
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.database.Cursor
+import android.graphics.Color
 import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.view.View
 import android.widget.RadioButton
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
+import androidx.core.content.ContextCompat
+import com.example.android.project3.R
+import com.example.android.project3.utils.ButtonState
+import com.example.android.project3.utils.Urls
+import com.example.android.project3.utils.sendNotification
 import kotlinx.android.synthetic.main.content_main.*
 import java.io.File
 
@@ -21,15 +29,25 @@ class MainActivity : AppCompatActivity() {
 
     private var downloadId: Long = 0
     private var selectedUrlFile = ""
+    lateinit var notificationManager: NotificationManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        notificationManager = ContextCompat.getSystemService(
+            this,
+            NotificationManager::class.java
+        ) as NotificationManager
+
         registerReceiver(receiver, IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE))
         initOnClick()
-    }
 
+        createChannel(
+            getString(R.string.download_notification_channel_id),
+            getString(R.string.download_notification_channel_name)
+        )
+    }
 
     private val receiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent) {
@@ -48,12 +66,38 @@ class MainActivity : AppCompatActivity() {
                     if (status == DownloadManager.STATUS_SUCCESSFUL) {
                         Toast.makeText(this@MainActivity, "Success", Toast.LENGTH_SHORT)
                             .show()
+                        notificationManager.sendNotification(
+                            "$selectedUrlFile download completed",
+                            applicationContext
+                        )
                     } else {
                         Toast.makeText(this@MainActivity, "Fail", Toast.LENGTH_SHORT)
                             .show()
                     }
                 }
             }
+        }
+    }
+
+    private fun createChannel(channelId: String, channelName: String) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val notificationChannel = NotificationChannel(
+                channelId,
+                channelName,
+                NotificationManager.IMPORTANCE_HIGH
+            )
+                .apply {
+                    setShowBadge(false)
+                }
+
+            notificationChannel.enableLights(true)
+            notificationChannel.lightColor = Color.RED
+            notificationChannel.enableVibration(true)
+            notificationChannel.description = "my description"
+
+//            val notificationManager = this.getSystemService(NotificationManager::class.java)
+
+            notificationManager.createNotificationChannel(notificationChannel)
         }
     }
 
