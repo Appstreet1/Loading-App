@@ -30,4 +30,10 @@
     <string name="please_select_file">Please select the file to download</string>
     <string name="Download">Download</string>
     <string name="we_are_downloading">We are loading</string>
+    <string name="file_name_">File name:</string>
+    <string name="status">Status:</string>
+    <string name="loadapp_">LoadApp- ..</string>
+    <string name="_">-</string>
+    <string name="ok">OK</string>
+    <string name="description">description</string>
 </resources>
