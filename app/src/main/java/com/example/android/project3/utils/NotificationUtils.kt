@@ -5,15 +5,22 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.provider.Settings.Global.getString
+import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.example.android.project3.R
 import com.example.android.project3.ui.DetailActivity
 
 private const val NOTIFICATION_ID = 0
 
-fun NotificationManager.sendNotification(messageBody: String, applicationContext: Context) {
+fun NotificationManager.sendNotification(
+    messageBody: String,
+    applicationContext: Context,
+    fileName: String
+) {
 
     val contentIntent = Intent(applicationContext, DetailActivity::class.java)
+
+    contentIntent.putExtra("filename", fileName)
 
     val contentPendingIntent = PendingIntent.getActivity(
         applicationContext,
@@ -21,6 +28,7 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
         contentIntent,
         PendingIntent.FLAG_UPDATE_CURRENT
     )
+
 
     val builder = NotificationCompat.Builder(
         applicationContext,

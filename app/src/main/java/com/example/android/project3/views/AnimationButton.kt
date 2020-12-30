@@ -26,11 +26,9 @@ class AnimationButton @JvmOverloads constructor(
     private var buttonColor = 0
     private var buttonText = ""
 
-    var buttonState: ButtonState by Delegates.observable<ButtonState>(ButtonState.Completed) { property, old, new ->
+    var buttonState: ButtonState by Delegates.observable<ButtonState>(ButtonState.Completed) { _, _, new ->
         when (new) {
-            ButtonState.Completed -> Log.i("TEST", "completed")
             ButtonState.Clicked -> startAnimation()
-            ButtonState.Loading -> Log.i("TEST", "Loading")
         }
     }
 
@@ -82,9 +80,9 @@ class AnimationButton @JvmOverloads constructor(
 
     private fun setButtonText() {
         buttonText = when (this.buttonState) {
-            ButtonState.Completed -> "Download"
-            ButtonState.Loading -> "We are loading"
-            else -> "Download"
+            ButtonState.Completed -> context.getString(R.string.Download)
+            ButtonState.Loading -> context.getString(R.string.we_are_downloading)
+            else -> context.getString(R.string.Download)
         }
     }
 
