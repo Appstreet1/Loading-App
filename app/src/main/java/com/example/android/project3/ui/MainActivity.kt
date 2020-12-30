@@ -67,7 +67,8 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(this@MainActivity, "Success", Toast.LENGTH_SHORT)
                             .show()
                         notificationManager.sendNotification(
-                            "$selectedUrlFile download completed",
+                            resources.getString(R.string.notification_description) +
+                                    " $selectedUrlFile",
                             applicationContext
                         )
                     } else {
