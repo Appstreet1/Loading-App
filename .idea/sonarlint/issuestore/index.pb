@@ -19,3 +19,5 @@ q
 Aapp/src/main/java/com/example/android/project3/ui/MainActivity.kt,4\c\4cf18651db1f101f000b3a7831b30ea4f50dd189
 y
 Iapp/src/main/java/com/example/android/project3/utils/NotificationUtils.kt,6\e\6ed57b8db8fed19a74aa45c6f1a4e27c6be65e28
+s
+Capp/src/main/java/com/example/android/project3/ui/DetailActivity.kt,e\4\e418691bf0de77d3a78c49731e6b17373e69053e

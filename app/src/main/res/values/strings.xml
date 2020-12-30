@@ -20,8 +20,6 @@
     <string name="fail">Fail</string>
     <string name="success">Success</string>
     <string name="filename">filename</string>
-    <string name="success">Success</string>
-    <string name="fail">Fail</string>
     <string name="my_description">my description</string>
     <string name="glide">Glide - Image Loading Library by BumTech</string>
     <string name="load_app">LoadApp - Current repository by Udacity</string>
