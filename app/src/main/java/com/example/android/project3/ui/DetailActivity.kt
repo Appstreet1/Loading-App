@@ -16,6 +16,7 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
         setSupportActionBar(toolbar)
+
         motion_layout.transitionToEnd()
 
         initNotificationManager()

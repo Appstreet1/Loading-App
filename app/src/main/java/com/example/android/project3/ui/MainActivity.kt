@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun initNotificationManager(){
+    private fun initNotificationManager() {
         notificationManager = ContextCompat.getSystemService(
             this,
             NotificationManager::class.java
@@ -104,16 +104,23 @@ class MainActivity : AppCompatActivity() {
                     val status =
                         cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS))
                     if (status == DownloadManager.STATUS_SUCCESSFUL) {
-                        Toast.makeText(this@MainActivity, getString(R.string.success), Toast.LENGTH_SHORT)
+                        Toast.makeText(
+                            this@MainActivity,
+                            getString(R.string.success),
+                            Toast.LENGTH_SHORT
+                        )
                             .show()
                         notificationManager.sendNotification(
                             resources.getString(R.string.notification_description) +
                                     " $selectedUrlFile",
                             applicationContext, getFileName()
                         )
-
                     } else {
-                        Toast.makeText(this@MainActivity, getString(R.string.fail), Toast.LENGTH_SHORT)
+                        Toast.makeText(
+                            this@MainActivity,
+                            getString(R.string.fail),
+                            Toast.LENGTH_SHORT
+                        )
                             .show()
                     }
                 }
@@ -202,6 +209,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
 
     private fun optionSelected(): Boolean = !selectedUrlFile.isEmpty()
 }
