@@ -10,7 +10,7 @@
     tools:showIn="@layout/activity_main">
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/select_radio_group"
         android:layout_width="0dp"
         android:layout_height="213dp"
         android:layout_marginStart="@dimen/margin_normal"
@@ -55,7 +55,7 @@
     </RadioGroup>
 
     <com.example.android.project3.views.LoadingButton
-        android:id="@+id/loadingButton"
+        android:id="@+id/loading_button"
         android:layout_width="match_parent"
         android:layout_height="@dimen/button_height"
         android:layout_marginStart="@dimen/margin_normal"

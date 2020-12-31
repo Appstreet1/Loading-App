@@ -23,6 +23,8 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_detail" />
+    <include
+        android:id="@+id/content_d"
+        layout="@layout/content_detail" />
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

@@ -17,7 +17,6 @@ class DetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail)
         setSupportActionBar(toolbar)
 
-        motion_layout.transitionToEnd()
 
         initNotificationManager()
 
@@ -40,11 +39,11 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun renderFileName() {
-        filename_data.text = getValueFromIntent()
+        file_name_value.text = getValueFromIntent()
     }
 
     private fun renderStatus(){
-        status_data.text = getStatus()
+        status_value.text = getStatus()
     }
 
     private fun getStatus(): String {

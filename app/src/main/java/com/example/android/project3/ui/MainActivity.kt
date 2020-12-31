@@ -197,8 +197,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initOnClick() {
-        loadingButton.setOnClickListener {
-            loadingButton.buttonState = ButtonState.Clicked
+        loading_button.setOnClickListener {
+            loading_button.buttonState = ButtonState.Clicked
 //            loadingCircle.buttonState = ButtonState.Clicked
 
             if (!optionSelected()) {

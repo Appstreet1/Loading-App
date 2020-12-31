@@ -3,14 +3,62 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ConstraintSet android:id="@+id/start">
-        <Constraint android:id="@+id/app_bar_layout2" />
+        <Constraint
+            android:id="@+id/select_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/background_view" />
+        <Constraint
+            android:id="@+id/icon_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.0"
+            app:layout_constraintBottom_toBottomOf="@id/background_view"
+            app:layout_constraintEnd_toEndOf="@id/background_view"
+            app:layout_constraintStart_toStartOf="@id/background_view"
+            app:layout_constraintTop_toTopOf="@id/background_view" />
+        <Constraint
+            android:id="@+id/loading_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
-        <Constraint android:id="@id/app_bar_layout2" />
+        <Constraint
+            android:id="@+id/select_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="1.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/background_view" />
+        <Constraint
+            android:id="@+id/icon_image_view"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:alpha="1.0"
+            app:layout_constraintBottom_toBottomOf="@id/background_view"
+            app:layout_constraintEnd_toEndOf="@id/background_view"
+            app:layout_constraintStart_toStartOf="@id/background_view"
+            app:layout_constraintTop_toTopOf="@id/background_view" />
+        <Constraint
+            android:id="@+id/loading_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
     </ConstraintSet>
 
     <Transition
+        app:autoTransition="animateToEnd"
         app:constraintSetEnd="@id/end"
-        app:constraintSetStart="@+id/start" />
+        app:constraintSetStart="@+id/start"
+        app:duration="2000" />
 </MotionScene>

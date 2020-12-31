@@ -7,10 +7,6 @@ P
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 s
 Capp/src/main/java/com/example/android/project3/utils/ButtonState.kt,5\c\5c4f88fe37da79e4ff0f31f87cb2f372a34cbdbb
-u
-Eapp/src/main/java/com/example/android/project3/views/LoadingCircle.kt,e\a\eaaa3fe2ee469f542e08c3e17c913e6c795b302a
-w
-Gapp/src/main/java/com/example/android/project3/views/AnimationButton.kt,6\a\6a3b5d97347b47b7dd613ed132350b070619b881
 l
 <app/src/main/java/com/example/android/project3/utils/Urls.kt,5\b\5be562580bd811a5f6130ee8f6f84b2fa6a307af
 u
