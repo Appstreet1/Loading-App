@@ -2,9 +2,10 @@ package com.example.android.project3.views
 
 import android.animation.ValueAnimator
 import android.content.Context
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.AccelerateInterpolator
@@ -122,7 +123,6 @@ class LoadingButton @JvmOverloads constructor(
             paintText
         )
     }
-
 
     private fun drawCircle(canvas: Canvas) {
         paintCircle.color = resources.getColor(R.color.colorAccent)
