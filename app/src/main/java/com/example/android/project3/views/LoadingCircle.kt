@@ -25,18 +25,18 @@ class LoadingCircle @JvmOverloads constructor(
     var buttonState: ButtonState by Delegates.observable<ButtonState>(ButtonState.Completed) { p, old, new ->
         when (new) {
             ButtonState.Clicked -> {
-                startAnimation()
+                startCircleAnimation()
             }
             else -> Log.i("TEST", new.toString())
         }
     }
 
-    private val paint: Paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+    private val paintCircle: Paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.FILL
         color = ContextCompat.getColor(context, R.color.colorAccent)
     }
 
-    private fun startAnimation() {
+    private fun startCircleAnimation() {
         val valueAnimator: ValueAnimator = ValueAnimator.ofInt(1, 360).apply {
             interpolator = AccelerateInterpolator()
             duration = 5000
@@ -58,8 +58,8 @@ class LoadingCircle @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        paint.color = resources.getColor(R.color.colorAccent)
-        canvas.drawArc(rectF, 270F, currentSweepAngle.toFloat(), true, paint);
+        paintCircle.color = resources.getColor(R.color.colorAccent)
+        canvas.drawArc(rectF, 270F, currentSweepAngle.toFloat(), true, paintCircle);
 
         if (currentSweepAngle == 360) {
             refreshCircle(canvas)
@@ -67,7 +67,7 @@ class LoadingCircle @JvmOverloads constructor(
     }
 
     private fun refreshCircle(canvas: Canvas){
-        paint.color = resources.getColor(R.color.colorPrimary)
-        canvas.drawArc(rectF, 270F, currentSweepAngle.toFloat(), true, paint);
+        paintCircle.color = resources.getColor(R.color.colorPrimary)
+        canvas.drawArc(rectF, 270F, currentSweepAngle.toFloat(), true, paintCircle);
     }
 }

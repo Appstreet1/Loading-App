@@ -7,7 +7,6 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.RectF
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
 import com.example.android.project3.utils.ButtonState
@@ -28,11 +27,11 @@ class AnimationButton @JvmOverloads constructor(
 
     var buttonState: ButtonState by Delegates.observable<ButtonState>(ButtonState.Completed) { _, _, new ->
         when (new) {
-            ButtonState.Clicked -> startAnimation()
+            ButtonState.Clicked -> startButtonAnimation()
         }
     }
 
-    private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+    private val paintAnimationButton = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.FILL
     }
 
@@ -42,7 +41,7 @@ class AnimationButton @JvmOverloads constructor(
         textSize = 80F
     }
 
-    private fun startAnimation() {
+    private fun startButtonAnimation() {
 
         buttonColor = resources.getColor(R.color.colorPrimaryDark)
 
@@ -62,7 +61,7 @@ class AnimationButton @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        drawButton(canvas)
+        drawButtonAnimation(canvas)
 
         if (currentWidth == finalWidth) {
             this.buttonState = ButtonState.Completed
@@ -73,9 +72,9 @@ class AnimationButton @JvmOverloads constructor(
         drawText(canvas, buttonText)
     }
 
-    private fun drawButton(canvas: Canvas){
-        paint.color = buttonColor
-        canvas.drawRect(0F, height.toFloat(), currentWidth.toFloat(), 0F, paint)
+    private fun drawButtonAnimation(canvas: Canvas){
+        paintAnimationButton.color = buttonColor
+        canvas.drawRect(0F, height.toFloat(), currentWidth.toFloat(), 0F, paintAnimationButton)
     }
 
     private fun setButtonText() {
@@ -91,8 +90,8 @@ class AnimationButton @JvmOverloads constructor(
     }
 
     private fun refreshButton(canvas: Canvas) {
-        paint.color = resources.getColor(R.color.colorPrimary)
-        canvas.drawRect(0F, height.toFloat(), currentWidth.toFloat(), 0F, paint)
+        paintAnimationButton.color = resources.getColor(R.color.colorPrimary)
+        canvas.drawRect(0F, height.toFloat(), currentWidth.toFloat(), 0F, paintAnimationButton)
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {

@@ -16,6 +16,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.view.View
+import android.widget.Button
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -189,9 +190,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initOnClick() {
-        animationButton.setOnClickListener {
-            animationButton.buttonState = ButtonState.Clicked
-            loadingCircle.buttonState = ButtonState.Clicked
+        loadingButton.setOnClickListener {
+            loadingButton.buttonState = ButtonState.Clicked
+//            loadingCircle.buttonState = ButtonState.Clicked
 
             if (!optionSelected()) {
                 Toast.makeText(this, getString(R.string.please_select_file), Toast.LENGTH_SHORT)
